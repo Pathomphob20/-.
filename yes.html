@@ -58,4 +58,42 @@
 
     .heart::after {
       left: -15px;
-      top:
+      top: 0;
+    }
+
+    @keyframes floatHeart {
+      0% {
+        bottom: 0;
+        left: 50%;
+        transform: translateX(-50%) scale(1);
+      }
+      100% {
+        bottom: 100%;
+        left: calc(50% + 100px);
+        transform: translateX(-50%) scale(1.5);
+      }
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @keyframes bgShift {
+      from { background-position: left; }
+      to { background-position: right; }
+    }
+  </style>
+</head>
+<body>
+  <h1>เย้! เราเป็นแฟนกันแล้วน้าาา 💖</h1>
+  <p>จะดูแลอย่างดีที่สุดเลยนะ 🥰</p>
+
+  <!-- หัวใจลอยหลายอัน -->
+  <div class="heart" style="left:10%; animation-delay: 0s;"></div>
+  <div class="heart" style="left:30%; animation-delay: 1s;"></div>
+  <div class="heart" style="left:50%; animation-delay: 2s;"></div>
+  <div class="heart" style="left:70%; animation-delay: 3s;"></div>
+  <div class="heart" style="left:90%; animation-delay: 4s;"></div>
+</body>
+</html>
