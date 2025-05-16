@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="UTF-8">
+  <title>เย้!</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      background: linear-gradient(135deg, #ffc0cb, #ffe4e1);
+      overflow: hidden;
+      font-family: 'Prompt', sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      flex-direction: column;
+      animation: bgShift 10s infinite alternate;
+    }
+
+    h1 {
+      color: #ff1493;
+      font-size: 2.8rem;
+      margin-bottom: 1rem;
+      text-align: center;
+      animation: fadeIn 1.5s ease-in;
+    }
+
+    p {
+      color: #555;
+      font-size: 1.2rem;
+      animation: fadeIn 2s ease-in;
+    }
+
+    .heart {
+      position: absolute;
+      width: 30px;
+      height: 30px;
+      background-color: pink;
+      transform: rotate(45deg);
+      animation: floatHeart 6s infinite ease-in-out;
+      opacity: 0.7;
+    }
+
+    .heart::before, .heart::after {
+      content: '';
+      position: absolute;
+      width: 30px;
+      height: 30px;
+      background-color: pink;
+      border-radius: 50%;
+    }
+
+    .heart::before {
+      top: -15px;
+      left: 0;
+    }
+
+    .heart::after {
+      left: -15px;
+      top:
