@@ -27,9 +27,11 @@
     }
 
     p {
-      color: #555;
-      font-size: 1.2rem;
-      animation: fadeIn 2s ease-in;
+      color: #444;
+      font-size: 1.4rem;
+      max-width: 90%;
+      text-align: center;
+      animation: fadeIn 2.5s ease-in;
     }
 
     .heart {
@@ -51,27 +53,12 @@
       border-radius: 50%;
     }
 
-    .heart::before {
-      top: -15px;
-      left: 0;
-    }
-
-    .heart::after {
-      left: -15px;
-      top: 0;
-    }
+    .heart::before { top: -15px; left: 0; }
+    .heart::after { left: -15px; top: 0; }
 
     @keyframes floatHeart {
-      0% {
-        bottom: 0;
-        left: 50%;
-        transform: translateX(-50%) scale(1);
-      }
-      100% {
-        bottom: 100%;
-        left: calc(50% + 100px);
-        transform: translateX(-50%) scale(1.5);
-      }
+      0% { bottom: 0; left: 50%; transform: translateX(-50%) scale(1); }
+      100% { bottom: 100%; left: calc(50% + 100px); transform: translateX(-50%) scale(1.5); }
     }
 
     @keyframes fadeIn {
@@ -83,17 +70,66 @@
       from { background-position: left; }
       to { background-position: right; }
     }
+
+    /* 🔸 Popup รูป */
+    .popup {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      background: rgba(0, 0, 0, 0.5);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      z-index: 10;
+    }
+
+    .popup img {
+      max-width: 90%;
+      max-height: 80%;
+      border-radius: 20px;
+      box-shadow: 0 0 15px rgba(255, 255, 255, 0.8);
+    }
+
+    .close-btn {
+      position: absolute;
+      top: 30px;
+      right: 40px;
+      font-size: 2rem;
+      color: white;
+      cursor: pointer;
+      font-weight: bold;
+    }
+
+    iframe {
+      display: none; /* ซ่อนไว้ ไม่รบกวนหน้า */
+    }
   </style>
 </head>
 <body>
-  <h1>เย้! เราเป็นแฟนกันแล้วน้าาา 💖</h1>
-  <p>จะดูแลอย่างดีที่สุดเลยนะ 🥰</p>
+  <h1>เย้! เราเป็นแฟนกันแล้ว 💖</h1>
+  <p>ตั้งแต่วันนี้ไป จะมีเราสองคนอยู่เคียงข้างกันเสมอ<br>จะดูแล จะใส่ใจ จะรักตลอดไปนะ :)</p>
 
-  <!-- หัวใจลอยหลายอัน -->
+  <!-- หัวใจลอย -->
   <div class="heart" style="left:10%; animation-delay: 0s;"></div>
   <div class="heart" style="left:30%; animation-delay: 1s;"></div>
   <div class="heart" style="left:50%; animation-delay: 2s;"></div>
   <div class="heart" style="left:70%; animation-delay: 3s;"></div>
   <div class="heart" style="left:90%; animation-delay: 4s;"></div>
+
+  <!-- 🔸 รูปคู่ป็อปอัป -->
+  <div class="popup" id="popup">
+    <span class="close-btn" onclick="document.getElementById('popup').style.display='none'">&times;</span>
+    <img src="couple.png" alt="รูปคู่ของเรา">
+  </div>
+
+  <!-- 🔊 YouTube เพลง: All I Ever Need -->
+  <iframe width="0" height="0"
+    src="https://www.youtube.com/embed/qZf8Qx4xxzc?autoplay=1&loop=1&playlist=qZf8Qx4xxzc"
+    frameborder="0"
+    allow="autoplay"
+    allowfullscreen>
+  </iframe>
 </body>
 </html>
